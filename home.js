@@ -329,3 +329,17 @@ function outer(){
 const x = outer();
 
 x();
+
+async function calculate(value){
+    try{
+        const res1 = await first(value);
+        const res2 = await second(res1);
+        const res3 = await final(res2);
+        console.log(res3);
+    }
+    catch(error){
+        console.error(error);
+
+    }
+}
+calculate(value)
